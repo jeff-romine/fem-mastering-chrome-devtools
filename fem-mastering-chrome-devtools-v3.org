@@ -1,0 +1,221 @@
+#+TITLE:     Presentation and Reading List
+#+AUTHOR:    Jeff Romine
+#+EMAIL:     jromineut@gmail.com
+#+DATE:      2015-03-24 Tue
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} author:nil email:nil creator:nil timestamp:nil
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+STARTUP: showeverythin
+
+* [[https://frontendmasters.com/courses/dev-tools][Introduction to Dev Tools, v3]]
+
+* Introduction
+
+** Introduction
+** DevTools History
+
+* Setup
+
+** Elements & Network Panels
+
+*** Elements
+**** Disable Extensions or Open Incognito Window
+**** Click + on Styles to add a new style rule
+
+*** Network Tab
+
+** Performance, Console, & Security Panels
+
+*** Console
+
+- $0 refers to last selected item in elements tab
+
+*** Security
+
+
+** Sources, Application, & Memory Panels
+
+*** Sources
+
+**** Workspaces
+
+*** Application
+
+**** Storage
+
+Mostly about Storage, i.e. Caching.
+
+**** Service Worker
+
+Progressive Web App?
+
+**** Storage -> Clear site data
+
+*** Memory
+
+** Lighthouse, Device Emulation, & Element Finder
+
+web page test
+
+*** [[https://www.webpagetest.org/][Webpagetest]]
+
+**** Teeprous.com
+
+***** [[https://www.webpagetest.org/result/240302_AiDcZP_8NP/][Teeprous.com Results]]
+
+*** Element Finder
+
+Left hand top of inspect page (arrow into square)
+
+** Quick Edits: CSS, HTML, & Scroll Into View
+
+*** Rendering onto actual Android devices
+
+
+- [[https://developer.chrome.com/docs/devtools/remote-debugging]]
+
+
+*** Scroll into view
+
+** Quick Edits: Computes Styles & Specificity
+
+
+*** [[https://specifishity.com/]]
+
+
+** Quick Edits: HTML Breakpoints, Themes, & Accessibility
+
+*** HTML Breakpoints
+
+
+#+begin_src javascript
+document.getElementById("main")
+document.getElementById("main").innerText = "Hi"
+#+end_src
+
+** Quick Edits Exercise
+
+
+** Workspaces
+
+** Workspace Exercise
+
+** Workspaces Solution
+
+** Step Through Debugging
+
+
+
+* Network & User Performance
+
+** [[https://frontendmasters.com/courses/dev-tools/network-performance-network-waterfall/][Network Performance & Network Waterfall]]
+
+*** 6 concurrent requests
+
+*** browsers prioritize requests
+
+*** priority can be overriden - preload or defer
+
+** [[https://frontendmasters.com/courses/dev-tools/network-performance-q-a/][Network Performance Q&A]]
+
+*** Parse Time is significant so the amount of javascript matters.
+
+*** [[https://medium.com/reloading/javascript-start-up-performance-69200f43b201][JavaScript Start-up Performance (Addy Osmani)]]
+
+** [[https://frontendmasters.com/courses/dev-tools/measuring-real-user-performance/][Measuring Real User Performance]]
+
+*** Performance mark and measure.
+
+#+begin_src javascript
+performance.mark("Start");
+// ...
+performance.mark("End");
+
+performance.measure("Frontend Masters Chrome Devtools", "Start", "End");
+performance.getEntriesByType("measure");
+
+#+end_src
+
+*** [[https://developer.mozilla.org/en-US/docs/Web/API/Performance][Performance API]]
+
+#+begin_src javascript
+const resources = performance.getEntriesByType("resource");
+const paints = performance.getEntriesByType("paint");
+const navigations = performance.getEntriesByType("navigation");
+#+end_src
+
+*** Performance Tab
+
+*** Timings Section
+
+** [[https://frontendmasters.com/courses/dev-tools/on-page-performance/][On-Page Performance]]
+
+
+*** RAIL
+
+- Response
+- Animation
+- Idle
+  - Batch the work
+- Load
+
+
+*** What is page jank?
+
+#+begin_quote
+Jank is any stuttering, juddering or just plain halting that users see
+when a site or app isn't keeping up with the refresh rate.
+#+end_quote
+
+
+
+** [[https://frontendmasters.com/courses/dev-tools/performance-panel-page-jank-tips/][Performance Panel & Page Jank Tips]]
+
+
+*** requestAnimationFrame
+
+React groups these things into right before the next animation frame.
+
+*** Web Workers
+
+background thread
+
+*** Running Node.js
+
+*** Memory Leaks & Memory Heap Snapshots
+
+**** Chrome Task Manager
+
+
+** [[https://frontendmasters.com/courses/dev-tools/what-can-slow-down-a-website/][What Can Slow Down a Website?]]
+
+*** [[http://localhost:3000/lesson/Audit][Audits]]
+
+*** E Tags
+
+*** [[https://developer.chrome.com/docs/lighthouse/overview/][Lighthouse Docs]]
+
+*** [[https://developer.chrome.com/docs/puppeteer/][Puppeteer]]
+
+*** [[https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md][lighthous-ci]]
+
+
+
+
+** Wrapping Up
+
+
+- Experiments (in Devtools)
+- Rendering in Drawer
+- [[https://umaar.com/blog/][Umar Blog]]
+- [[https://developer.chrome.com/docs/devtools/][DevTools Docs]]
+- [[https://web.dev/][web.dev]]
